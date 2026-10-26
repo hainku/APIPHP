@@ -4,7 +4,7 @@ Class Database{
     public function __construct(){
         $_ENV = parse_ini_file(__DIR__ . "/../.env");
         $host = $_ENV['HOST'];
-        $port = $_ENV['PORT']; // e.g., 12345
+        $port = 24780;
         $db   = $_ENV['DB'];
         $user = $_ENV['USER'];
         $pass = $_ENV['PASS'];
