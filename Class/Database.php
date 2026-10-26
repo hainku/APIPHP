@@ -2,7 +2,11 @@
 Class Database{
     protected $conn;
     public function __construct(){
-        $_ENV = parse_ini_file(__DIR__ . "/../.env");
+        if (file_exists(__DIR__ . "/../.env")) {
+            $_ENV = parse_ini_file(__DIR__ . "/../.env");
+        } else {
+            $_ENV = $_ENV ?: getenv();
+        }
         $host = $_ENV['HOST'];
         $port = 24780;
         $db   = $_ENV['DB'];
